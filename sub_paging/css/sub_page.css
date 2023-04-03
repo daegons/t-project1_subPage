@@ -475,11 +475,19 @@ section {
   cursor: pointer;
   color: #4b4b4b;
 }
+.slide_prev_hover:hover {
+  transition: transform 0.5s;
+  transform: translateX(-2px);
+}
 
 .slide_next {
   font-size: 2rem;
   cursor: pointer;
   color: #232323;
+}
+.slide_next_hover:hover {
+  transition: transform 0.5s;
+  transform: translateX(2px);
 }
 .arrow_container {
   display: flex;
@@ -550,6 +558,13 @@ section {
   font-size: 0.9rem;
   color: #9f9f9f;
   line-height: 1.5rem;
+}
+
+ul li img:hover {
+  cursor: grab;
+}
+ul li img:active {
+  cursor: grabbing;
 }
 
 /* ====================================푸터======================================= */
