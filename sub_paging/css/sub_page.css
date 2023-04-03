@@ -1,0 +1,625 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  overflow-x: hidden;
+  background: rgb(159, 109, 109);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mainBtn {
+  position: fixed;
+  top: 55%;
+  transform: translateY(-50%);
+  margin-left: 30px;
+  z-index: 1;
+}
+
+.mainBtn > li {
+  cursor: pointer;
+  list-style: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 25px;
+  background-color: rgba(191, 7, 255, 0.3);
+  margin-bottom: 20px;
+}
+
+.scrollSlide {
+  position: absolute;
+  padding: 10px;
+  width: 250px;
+  border-radius: 50px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  text-align: center;
+}
+
+.scrollSlide .arrow {
+  rotate: 90deg;
+  height: 8px;
+}
+
+.wrap {
+  height: 200vh;
+}
+
+.container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 65.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  background: linear-gradient(to right, rgb(87, 7, 255), rgb(191, 7, 255));
+  font-size: 20px;
+  color: white;
+  z-index: 9999;
+}
+
+.header .logo {
+  display: block;
+}
+
+.header .logo2 {
+  display: none;
+}
+
+.header .login:hover {
+  cursor: pointer;
+}
+
+.header .login span {
+  font-weight: 600;
+}
+
+.home {
+  cursor: pointer;
+  position: fixed;
+  top: 65px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: all 0.5s;
+  z-index: 9999;
+}
+
+.homeCancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 65px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.homeCancel.on {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  top: 130px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #bf07ff;
+  color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  z-index: 9999;
+}
+
+.home.on {
+  width: 350px;
+}
+
+.home .homewrap {
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 350px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+
+.home .homewrap li {
+  flex: 2;
+  padding: 0 10px;
+}
+
+.home .homewrap li:nth-child(1):hover {
+  color: #5707ff;
+}
+
+.home .homewrap li:nth-child(1):hover {
+  color: #5707ff;
+}
+
+.home .homewrap li:nth-child(2):hover {
+  color: #5707ff;
+}
+
+.home .homewrap li:nth-child(3):hover {
+  color: #5707ff;
+}
+
+.home .homewrap li:nth-child(2) {
+  flex: 1;
+}
+
+.home .homewrap li:nth-child(2) i {
+  animation: cloud 2.5s ease infinite;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateY(0px);
+  }
+
+  10% {
+    transform: translateY(-3px);
+  }
+
+  20% {
+    transform: translateY(0px);
+  }
+
+  30% {
+    transform: translateY(-3px);
+  }
+
+  40% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* loginPage1 */
+.loginPage1 {
+  display: none;
+  text-align: center;
+  width: 650px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 9;
+  padding: 9rem 6rem;
+  border-radius: 30px;
+  border: 1px dotted rgba(74, 74, 238, 0.712);
+}
+
+.loginPage1 h2 {
+  position: relative;
+  bottom: 4rem;
+  font-size: 3rem;
+  color: #5707ff;
+}
+
+.loginPage1 .inputfield {
+  display: flex;
+  align-items: center;
+  margin: 25px 10px;
+  border-radius: 3px;
+  background-color: #eaeaea;
+}
+
+.inputfield i {
+  margin-left: 15px;
+  color: #999;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+}
+
+.btngroup {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btngroup button {
+  flex-basis: 48%;
+  background-color: #5707ff;
+  height: 55px;
+  border-radius: 35px;
+  border: 0;
+  outline: 0;
+  margin-top: 50px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.sXmark {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #bf07ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* loginPage2 */
+
+.loginPage2 {
+  display: none;
+  text-align: center;
+  width: 650px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  padding: 9rem 6rem;
+  border-radius: 30px;
+  border: 1px dotted rgba(74, 74, 238, 0.712);
+  z-index: 9;
+}
+
+.loginPage2 h2 {
+  position: relative;
+  bottom: 4rem;
+  font-size: 3rem;
+  color: #5707ff;
+}
+
+.loginPage2 .inputfield {
+  display: flex;
+  align-items: center;
+  margin: 25px 10px;
+  border-radius: 3px;
+  background-color: #eaeaea;
+}
+
+.inputfield i {
+  margin-left: 15px;
+  color: #999;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+}
+
+.btngroup {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btngroup button {
+  flex-basis: 48%;
+  background-color: #5707ff;
+  height: 55px;
+  border-radius: 35px;
+  border: 0;
+  outline: 0;
+  margin-top: 50px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.lXmark {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #bf07ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+/* ====================================위는 헤더================================ */
+/* ====================================section1 메뉴바 시작================================ */
+
+section {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  position: relative;
+}
+.inner {
+  margin-top: 100px;
+  /* padding-top: 100px; */
+  width: 100%;
+  height: 100%;
+  background-color: #3a3a3a;
+  overflow: hidden;
+  padding: 0rem 1rem;
+  /* margin: 0 auto; */
+}
+.skill_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffffff;
+  padding: 1rem 0;
+}
+.skill {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+  padding: 0.5rem 3rem;
+  margin: 0 1rem;
+  background: #cfcfcf;
+  box-shadow: 3px 4px 4px rgb(120, 120, 120);
+  transition: 0.4s;
+}
+.skill:hover {
+  transform: translate(0, -5px);
+}
+.skill_icon {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.skill_title {
+  width: 100%;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.main_title {
+  font-weight: bold;
+  color: #000000;
+}
+.sub_title {
+  font-size: 0.9rem;
+  color: #3a3a3a;
+}
+@media (max-width: 1140px) {
+  .sub_title {
+    font-size: 0.9rem;
+    color: #3a3a3a;
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .skill_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffffff;
+    display: none;
+  }
+}
+/* ====================================section2 좌우 버튼================================ */
+.roadmap_container {
+  width: 100%;
+  /* margin-top: 2rem; */
+}
+.roadmap_title_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.roadmap_title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #545e6f;
+}
+.slide_prev {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #4b4b4b;
+}
+
+.slide_next {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #232323;
+}
+.arrow_container {
+  display: flex;
+}
+/* ====================================section2 img박스 시작================================ */
+.class_list {
+  display: flex;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+  /* 이동버튼 클릭시 카드 짤림 고침 */
+  overflow: none;
+}
+.class_card {
+  max-width: 240px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  margin: 0px 10px;
+  transition: 0.4s;
+  flex-shrink: 0;
+}
+.class_card:hover {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+  transform: translate(0, -5px);
+}
+.class_img {
+  max-width: 240px;
+  height: 190px;
+  border-radius: 8px 8px 0 0;
+  /* transition: 0.4s; */
+}
+/* .class_img:hover {
+  transform: scale(1.2);
+} */
+.class_container {
+  width: 100%;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+.class_skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.class_type {
+  font-size: 0.9rem;
+  color: #949393;
+}
+.class_format {
+  font-size: 0.9rem;
+  color: white;
+  background: #5707ff;
+  padding: 0.2rem;
+}
+.class_desc {
+  width: 100%;
+  margin-top: 1rem;
+}
+.class_title {
+  font-weight: bold;
+  color: #919191;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+}
+.class_detail {
+  font-size: 0.9rem;
+  color: #9f9f9f;
+  line-height: 1.5rem;
+}
+
+/* ====================================푸터======================================= */
+.footer {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 150px;
+  bottom: 0;
+  background-color: white;
+  text-align: center;
+  bottom: 65.5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContent {
+  display: flex;
+  width: 80%;
+}
+
+.footer .fTop {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .footerContent .fTop ul li {
+  display: inline-block;
+  font-size: 25px;
+  color: #5707ff;
+  padding: 20px;
+}
+
+.footer .fBottom {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===================이동버튼============== */
+#backToTop {
+  background: rgb(47, 48, 89);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition-property: background-color, opacity, visibility;
+  transition-duration: 0.3s, 0.5s, 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+#backToTop::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-size: 1.5rem;
+  line-height: 40px;
+  color: white;
+}
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+#backToTop.show:hover {
+  cursor: pointer;
+  background: #333;
+}
