@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   overflow-x: hidden;
   background: rgb(159, 109, 109);
 }
@@ -624,7 +624,7 @@ ul li img:active {
   z-index: 999;
 }
 #backToTop::after {
-  content: "\f077";
+  content: '\f077';
   font-family: FontAwesome;
   font-size: 1.5rem;
   line-height: 40px;
